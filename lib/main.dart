@@ -287,7 +287,6 @@ class SignUpButtonActiveManager with ChangeNotifier {
   var _emailAddressIsFilled = false;
   var _passwordIsFilled = false;
   var _checkPasswordIsFilled = false;
-  var _checkTermsFilled = false;
 
   void _fillEmailAddress(String value){
     if (value.length > 0) {
@@ -317,14 +316,13 @@ class SignUpButtonActiveManager with ChangeNotifier {
   }
 
   _createButton(String buttonLabel, bool termsIsChecked) {
-    _checkTermsFilled = termsIsChecked;
     final _activeLoginButton = ActiveLoginButton(buttonLabel);
     final _inactiveLoginButton = InactiveLoginButton(buttonLabel);
 
     if (_emailAddressIsFilled == true
         && _passwordIsFilled == true
         && _checkPasswordIsFilled == true
-        && _checkTermsFilled == true) {
+        && termsIsChecked == true) {
       return _activeLoginButton;
     } else {
       return _inactiveLoginButton;
@@ -784,8 +782,6 @@ class SignUpTabScreen extends StatelessWidget {
     TermsCheckBoxManager termsCheckBoxManageData = Provider.of<TermsCheckBoxManager>(context);
     SignUpButtonActiveManager signUpButtonActiveManageData = Provider.of<SignUpButtonActiveManager>(context);
 
-    bool _isTermsChecked = termsCheckBoxManageData._checkedTerms;
-
     String _emailAddress;
     String _password;
     String _checkPassword;
@@ -973,7 +969,7 @@ class SignUpTabScreen extends StatelessWidget {
                           ]
                       ),
                     ),
-                    signUpButtonActiveManageData._createButton("新規登録", _isTermsChecked),
+                    signUpButtonActiveManageData._createButton("新規登録", termsCheckBoxManageData._checkedTerms),
                     Container(
                       margin: EdgeInsets.only(top: 55),
                       child: Row(
