@@ -47,6 +47,10 @@ class MyApp extends StatelessWidget {
 }
 
 class InitLoginSignUpScreen extends StatelessWidget {
+
+  final _loginInitIndex = 0;
+  final _signUpInitIndex = 1;
+
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -61,7 +65,7 @@ class InitLoginSignUpScreen extends StatelessWidget {
             ),
           ),
         ),
-        Scaffold(
+       Scaffold(
           backgroundColor: Colors.transparent,
           body: Container(
             width: double.infinity,
@@ -71,7 +75,7 @@ class InitLoginSignUpScreen extends StatelessWidget {
                   padding: EdgeInsets.only(
                     top: 130,
                   ),
-                ),
+               ),
                 Image.asset('/Users/tateokaryuunosuke/AndroidStudioProjects/sportsbet/images/logo_feluni.png',
                   width: 220,
                   height: 74,
@@ -96,7 +100,7 @@ class InitLoginSignUpScreen extends StatelessWidget {
                           style: TextStyle(fontWeight: FontWeight.bold),
                         ),
                         textColor: textOnWhiteButtonColor,
-                        onPressed: () => Navigator.of(context).pushReplacementNamed("/loginSignUpFormScreen"),
+                        onPressed: () => Navigator.of(context).pushReplacementNamed("/loginSignUpFormScreen", arguments: _loginInitIndex),
                       ),
                     ),
                     Container( color: Colors.transparent, width: 132, height:40,
@@ -110,13 +114,14 @@ class InitLoginSignUpScreen extends StatelessWidget {
                           style: TextStyle(fontWeight: FontWeight.bold),
                         ),
                         textColor: textOnWhiteButtonColor,
-                        onPressed: () => Navigator.of(context).pushReplacementNamed("/loginSignUpFormScreen"),
+                        onPressed: () =>
+                          Navigator.of(context).pushReplacementNamed("/loginSignUpFormScreen", arguments: _signUpInitIndex),
                       ),
                     ),
                     Container( color: Colors.transparent, width: 20),
                   ],
                 ),
-            ]
+              ]
             ),
           ),
         ),
@@ -348,36 +353,40 @@ class LoginSignUpFormScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
+    final int _initialIndex = ModalRoute.of(context).settings.arguments;
+
     return MultiProvider(
-        providers: [
-          ChangeNotifierProvider<LoginPasswordManager>.value (
+      providers: [
+        ChangeNotifierProvider<LoginPasswordManager>.value (
               value: loginPasswordManager),
-          ChangeNotifierProvider<SignUpPasswordManager>.value (
-              value: signUpPasswordManager),
-          ChangeNotifierProvider<SignUpCheckPasswordManager>.value (
-              value: signUpCheckPasswordManager),
-          ChangeNotifierProvider<GoogleAuthenticatorCheckBoxManager>.value (
-              value: googleAuthenticatorManager),
-          ChangeNotifierProvider<AutoLoginCheckBoxManager>.value (
-              value: autoLoginManager),
-          ChangeNotifierProvider<TermsCheckBoxManager>.value (
-              value: termsCheckBoxManager),
-          ChangeNotifierProvider<LoginEmailAddressUnderlineManager>.value(
-              value: loginEmailAddressUnderlineManager),
-          ChangeNotifierProvider<LoginPasswordUnderlineManager>.value(
-              value: loginPasswordUnderlineManager),
-          ChangeNotifierProvider<SignUpEmailAddressUnderlineManager>.value(
-              value: signUpEmailAddressUnderlineManager),
-          ChangeNotifierProvider<SignUpPasswordUnderlineManager>.value(
-              value: signUpPasswordUnderlineManager),
-          ChangeNotifierProvider<CheckPasswordUnderlineManager>.value(
-              value: checkPasswordUnderlineManager),
-          ChangeNotifierProvider<LoginButtonActiveManager>.value(
-              value: loginButtonActiveManager),
-          ChangeNotifierProvider<SignUpButtonActiveManager>.value(
-              value: signUpButtonActiveManager),
-        ],
-        child: DefaultTabController(
+        ChangeNotifierProvider<SignUpPasswordManager>.value (
+            value: signUpPasswordManager),
+        ChangeNotifierProvider<SignUpCheckPasswordManager>.value (
+            value: signUpCheckPasswordManager),
+        ChangeNotifierProvider<GoogleAuthenticatorCheckBoxManager>.value (
+            value: googleAuthenticatorManager),
+        ChangeNotifierProvider<AutoLoginCheckBoxManager>.value (
+            value: autoLoginManager),
+        ChangeNotifierProvider<TermsCheckBoxManager>.value (
+            value: termsCheckBoxManager),
+        ChangeNotifierProvider<LoginEmailAddressUnderlineManager>.value(
+            value: loginEmailAddressUnderlineManager),
+        ChangeNotifierProvider<LoginPasswordUnderlineManager>.value(
+            value: loginPasswordUnderlineManager),
+        ChangeNotifierProvider<SignUpEmailAddressUnderlineManager>.value(
+            value: signUpEmailAddressUnderlineManager),
+        ChangeNotifierProvider<SignUpPasswordUnderlineManager>.value(
+            value: signUpPasswordUnderlineManager),
+        ChangeNotifierProvider<CheckPasswordUnderlineManager>.value(
+            value: checkPasswordUnderlineManager),
+        ChangeNotifierProvider<LoginButtonActiveManager>.value(
+            value: loginButtonActiveManager),
+        ChangeNotifierProvider<SignUpButtonActiveManager>.value(
+            value: signUpButtonActiveManager),
+      ],
+      child: DefaultTabController(
+        initialIndex: _initialIndex == null ? 0 : _initialIndex,
         length: _tab.length,
         child: Stack(
           children: <Widget>[
