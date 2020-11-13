@@ -7,8 +7,8 @@ import 'package:sportsbet/ui/components/button.dart';
 class InitLoginSignUpScreen extends StatelessWidget {
 
   final _loginSignUpBackground = LoginSignUpBackground();
-  final _loginButton = LoginButtonOnInitScreen();
-  final _signUpButton = SignUpButtonOnInitScreen();
+  final BaseButtonOnInitScreen _loginButton = LoginButtonOnInitScreen();
+  final BaseButtonOnInitScreen _signUpButton = SignUpButtonOnInitScreen();
 
   @override
   Widget build(BuildContext context) {
