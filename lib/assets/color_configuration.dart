@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+// Login and SignUp
 const Color whiteColor = Color.fromARGB(255, 240, 240, 240);
 const Color textOnWhiteButtonColor = Color.fromARGB(255, 56, 61, 66);
 const Color tabsColor = Color.fromARGB(230, 5, 10, 16);
@@ -14,3 +15,6 @@ const Color inactiveButtonColor = Color.fromARGB(255, 48, 58, 72);
 const Color inactiveButtonTextColor = Color.fromARGB(255, 74, 80, 86);
 const Color accentColorStart = Color.fromARGB(255, 214, 114, 247);
 const Color accentColorEnd = Color.fromARGB(255, 250, 126, 78);
+
+// App
+const Color appBackgroundColor = Color.fromARGB(255, 24, 27, 29);

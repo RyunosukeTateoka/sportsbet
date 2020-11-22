@@ -159,7 +159,7 @@ class ActiveButton extends BaseButtonOnTabScreen {
       height: _buttonHeight,
       child: RaisedButton(
         shape: _roundedRectangleBorder,
-        onPressed: () {},
+        onPressed: () => Navigator.of(context).pushReplacementNamed("/appHomeScreen"),
         padding: _paddingEdgeInsets,
         child: Ink(
           decoration: BoxDecoration(

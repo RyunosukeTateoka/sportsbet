@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:sportsbet/ui/viewModel/loginSignUpViewModel.dart';
+import 'package:sportsbet/ui/view_model/login_sign_up_view_model.dart';
 import 'package:sportsbet/assets/color_configuration.dart';
-import 'package:sportsbet/ui/components/singleSentenceFormField.dart';
-import 'package:sportsbet/ui/components/checkBox.dart';
-import 'package:sportsbet/ui/components/snsConnectButtonArea.dart';
+import 'package:sportsbet/ui/components/single_sentence_form_field.dart';
+import 'package:sportsbet/ui/components/check_box.dart';
+import 'package:sportsbet/ui/components/sns_connect_button_area.dart';
 
 class LoginTabScreen extends StatelessWidget {
 

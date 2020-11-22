@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sportsbet/ui/components/button.dart';
-import 'package:sportsbet/ui/components/buttonAreaDivider.dart';
+import 'package:sportsbet/ui/components/button_area_divider.dart';
 
 class SnsConnectButtonArea extends StatelessWidget {
 

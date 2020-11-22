@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:sportsbet/assets/color_configuration.dart';
-import 'package:sportsbet/ui/viewModel/loginSignUpViewModel.dart';
+import 'package:sportsbet/ui/view_model/login_sign_up_view_model.dart';
 
 const String _emailAddressLabel = 'メールアドレス';
 const String _passwordLabel = 'パスワード';

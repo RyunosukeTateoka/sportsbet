@@ -1,12 +1,11 @@
 import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:sportsbet/ui/components/loginSignUpBackground.dart';
-import 'package:sportsbet/ui/viewModel/loginSignUpViewModel.dart';
-import 'package:sportsbet/ui/components/loginSignUpAppBar.dart';
-import 'package:sportsbet/ui/screens/loginTabScreen.dart';
-import 'package:sportsbet/ui/screens/signUpTabScreen.dart';
+import 'package:sportsbet/ui/components/login_sign_up_background.dart';
+import 'package:sportsbet/ui/view_model/login_sign_up_view_model.dart';
+import 'package:sportsbet/ui/components/login_sign_up_app_bar.dart';
+import 'package:sportsbet/ui/screens/login_tab_screen.dart';
+import 'package:sportsbet/ui/screens/sign_up_tab_screen.dart';
 
 class LoginSignUpFormScreen extends StatelessWidget {
 

@@ -1,7 +1,7 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import 'package:sportsbet/ui/components/loginSignUpBackground.dart';
+import 'package:sportsbet/ui/components/login_sign_up_background.dart';
 import 'package:sportsbet/ui/components/button.dart';
 
 class InitLoginSignUpScreen extends StatelessWidget {
